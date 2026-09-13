@@ -1,194 +1,21 @@
-﻿# LIFEOPS — Autonomous Personal Operations Agent
-
-LIFEOPS is an autonomous personal operations agent built with the Strands Agents SDK and Amazon Bedrock.
-
-Instead of only answering questions, LIFEOPS can understand an objective, break it into actionable work, research information, execute permitted actions, verify real results, preserve evidence, remember workflows, recover from failures, and produce a traceable final report.
-
-## Core Workflow
-
-User Objective
-→ Planner
-→ Priority
-→ Research
-→ Action
-→ Human Approval
-→ Verification
-→ Evidence
-→ Memory
-→ Recovery
-→ Final Report
-
-## Why LIFEOPS?
-
-Many AI assistants can generate plans or text, but real-world tasks require more than generation.
-
-LIFEOPS is designed around a closed-loop principle:
-
-**Plan → Act → Verify → Remember**
-
-The system distinguishes between:
-- what the user requested
-- what the agents planned
-- what was actually executed
-- what can be verified
-- what evidence supports the result
-- what remains incomplete or blocked
-
-## Key Capabilities
-
-### Intelligent Planning
-Breaks a high-level objective into actionable tasks with priorities, dependencies, missing information, and success criteria.
-
-### Research
-Retrieves information from supplied public webpages and persists evidence for later verification.
-
-### Action Execution
-Performs explicitly authorized safe operations such as task creation and workspace inspection.
-
-### Human Approval
-Sensitive operations require an externally approved, exact, one-time approval.
-
-### Secure File Actions
-File writes are protected against:
-- missing approval
-- invalid approval
-- approval replay
-- path traversal
-- protected `.git` paths
-- protected configuration files
-
-### Verification
-LIFEOPS does not assume that an action succeeded. It checks persistent task state and stored evidence.
-
-### Evidence
-Research evidence is persisted with traceable evidence identifiers.
-
-### Persistent Memory
-Completed workflow knowledge can be stored and retrieved across executions.
-
-### Recovery
-Failed or blocked actions produce structured recovery information instead of silently continuing.
-
-### Auditability
-Important actions are recorded in a persistent audit log.
-
-### Final Reports
-Reports distinguish verified results from unverified results, blockers, evidence, and next actions.
-
-## Example
-
-A user can provide an objective such as:
-
-> Prepare everything I need to submit my hackathon project.
-
-LIFEOPS can turn that objective into a structured workflow:
-
-1. Understand the objective
-2. Break it into tasks
-3. Prioritize dependencies
-4. Research verified requirements
-5. Inspect available project artifacts
-6. Identify missing work
-7. Create actionable tasks
-8. Execute permitted actions
-9. Request approval for sensitive actions
-10. Verify actual results
-11. Store evidence
-12. Remember the workflow
-13. Generate a final readiness report
-
-## Safety Model
-
-LIFEOPS follows a permission boundary:
-
-**Safe**
-- planning
-- research
-- task creation
-- task inspection
-- workspace inspection
-- evidence retrieval
-- verification
-
-**Approval Required**
-- sensitive file writes
-- other protected external actions
-
-The Action Agent cannot self-approve a sensitive action.
-
-Approved sensitive actions are consumed after execution, preventing replay.
-
-## Technology
-
-- Python
-- Strands Agents SDK
-- Amazon Bedrock
-- Qwen3 Coder Next
-- PowerShell / Windows development environment
-- Persistent JSON state
-- Git / GitHub
-
-## Project Structure
-
-```text
-LIFEOPS/
-├── agents/
-│   ├── planner.py
-│   ├── priority.py
-│   ├── research.py
-│   ├── action.py
-│   ├── verification.py
-│   ├── recovery.py
-│   ├── report.py
-│   └── memory.py
-│
-├── app/
-│   ├── main.py
-│   ├── orchestrator.py
-│   └── workflow_state.py
-│
-├── tools/
-│   ├── approval_manager.py
-│   ├── approval_tools.py
-│   ├── secure_actions.py
-│   ├── file_actions.py
-│   ├── task_manager.py
-│   ├── evidence_store.py
-│   ├── memory_store.py
-│   ├── workflow_memory.py
-│   ├── workspace_tools.py
-│   ├── web_research.py
-│   ├── audit_log.py
-│   └── date_tools.py
-│
-├── tests/
-│   └── test_lifeops_regression.py
-│
-├── data/
-└── reports/
-
-**2. Create the MIT license:**
-
-```powershell id="k42pm7"
-@'
-MIT License
+﻿MIT License
 
 Copyright (c) 2026 Sneha S
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files, to deal in the Software
-without restriction, including without limitation the rights to use, copy,
-modify, merge, publish, distribute, sublicense, and/or sell copies of the
-Software, and to permit persons to whom the Software is furnished to do so,
-subject to the following conditions:
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
