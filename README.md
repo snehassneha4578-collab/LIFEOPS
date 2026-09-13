@@ -67,8 +67,9 @@ LIFEOPS is an autonomous personal operations agent designed to transform a real-
 
 .\.venv\Scripts\python.exe -m streamlit run .\ui\dashboard.py
 
-«ℹ️ The dashboard runs locally on the machine where LIFEOPS is installed.
-No public dashboard URL is currently included in this repository.»
+🌐 Dashboard
+
+http://localhost:8501
 
 ---
 
@@ -116,7 +117,7 @@ No public dashboard URL is currently included in this repository.»
 🛡️ Safety & Human Approval
 
 <p align="center">
-  <img src="assets/LIFEOPS_Safety.png" width="100%" alt="LIFEOPS Safety">
+  <img src="assets/LIFEOPS_Safety.png" width="100%" alt="LIFEOPS Safety Architecture">
 </p>LIFEOPS is designed around safe autonomy, ensuring that autonomous execution does not bypass human control or verification.
 
 🔐 Safety Principles
@@ -164,7 +165,7 @@ Verification States
 
 <p align="center">
   <img src="assets/LIFEOPS_Readiness_Report.png" width="100%" alt="LIFEOPS Readiness Report">
-</p>After the workflow completes, LIFEOPS generates a structured Readiness Report containing status, evidence, verification results, issues and next steps.
+</p>After the workflow completes, LIFEOPS generates a structured Readiness Report containing:
 
 📋 Report Section| 🔎 Purpose
 🎯 Objective| Original real-world goal
@@ -206,21 +207,11 @@ cd LIFEOPS
 
 python -m venv .venv
 
-4️⃣ Activate Virtual Environment
-
-Windows PowerShell:
-
-.\.venv\Scripts\Activate.ps1
-
-Windows Command Prompt:
-
-.venv\Scripts\activate
-
-5️⃣ Install Dependencies
+4️⃣ Install Dependencies
 
 pip install -r requirements.txt
 
-6️⃣ Start LIFEOPS Dashboard
+5️⃣ Start LIFEOPS
 
 .\.venv\Scripts\python.exe -m streamlit run .\ui\dashboard.py
 
@@ -247,17 +238,17 @@ Test Coverage
 
 «🚧 Demo Video: Coming Soon»
 
-The final demonstration will showcase the complete LIFEOPS workflow:
+The final demonstration will showcase:
 
-🎯 Objective
+🎯 Real-world objective
 → 🧠 Planning
 → 🔎 Research
-→ ⚙️ Controlled Execution
-→ 🛡️ Human Approval
+→ ⚙️ Controlled execution
+→ 🛡️ Human approval
 → ✅ Verification
 → 🔄 Recovery
 → 🧠 Memory
-→ 📊 Final Readiness Report
+→ 📊 Final readiness report
 
 ---
 
