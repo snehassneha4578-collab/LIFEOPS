@@ -1,132 +1,240 @@
-import sys
-from pathlib import Path
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-import streamlit as st
+<p align="center">
+<img src="assets/LIFEOPS_Hero_Banner.png" width="100%" alt="LIFEOPS">
+</p>
 
-def display_result(result):
-    if result is None:
-        return
-    if hasattr(result, 'message'):
-        message = result.message
-        if isinstance(message, dict):
-            content = message.get('content', [])
-            texts = [item.get('text', '') for item in content if isinstance(item, dict) and item.get('text')]
-            if texts:
-                st.markdown('\n\n'.join(texts))
-                return
-    st.write(result)
+<h1 align="center">LIFEOPS</h1>
 
-from app.orchestrator import orchestrate
+<p align="center"><strong>Autonomous Personal Operations Agent</strong></p>
 
-st.set_page_config(
-    page_title="LIFEOPS",
-    page_icon="",
-    layout="wide"
-)
+<p align="center">Plan • Research • Act • Approve • Verify • Recover • Remember • Report</p>
 
-st.title(" LIFEOPS")
-st.image("assets/LIFEOPS_Hero_Banner.png", width="stretch")
-st.subheader("Autonomous Personal Operations Agent")
-st.caption("Plan  Research  Act  Verify  Recover  Remember  Report")
+<p align="center">
+<a href="https://github.com/snehassneha4578-collab/LIFEOPS"><img src="https://img.shields.io/badge/GitHub-LIFEOPS-181717?style=for-the-badge&logo=github"></a>
+<a href="https://agentsforhumans.devpost.com/"><img src="https://img.shields.io/badge/Agents%20for%20Humans-Hackathon-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white"></a>
+<img src="https://img.shields.io/badge/Python-3.14-3776AB?style=for-the-badge&logo=python&logoColor=white">
+<img src="https://img.shields.io/badge/Strands%20Agents-SDK-232F3E?style=for-the-badge">
+<img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge">
+</p>
 
-st.divider()
+---
 
-st.markdown("###  Mission")
-st.info("Give LIFEOPS a real-world objective and watch the workflow progress from planning to verified results.")
+## Mission
 
-objective = st.text_area(
-    "What should LIFEOPS accomplish?",
-    placeholder="Example: Prepare everything I need to submit my hackathon project."
-)
+LIFEOPS takes a real-world objective and turns it into a structured, evidence-backed workflow.
 
-if st.button(" Run LIFEOPS", type="primary"):
-    if not objective.strip():
-        st.warning("Please enter an objective.")
-    else:
-        st.session_state["objective"] = objective
-        with st.spinner("LIFEOPS is working..."):
-            state = orchestrate(objective)
-        st.session_state["workflow_state"] = state
-        st.success("LIFEOPS workflow completed.")
+**Plan → Research → Act safely → Verify → Recover → Remember → Report**
 
-st.divider()
+## What LIFEOPS Does
 
-col1, col2, col3, col4 = st.columns(4)
+| Capability | Description |
+|---|---|
+| Planning | Converts objectives into structured tasks |
+| Research | Researches information and preserves evidence |
+| Action | Executes controlled actions |
+| Approval | Requires approval for sensitive operations |
+| Safety | Blocks unauthorized sensitive actions |
+| Verification | Checks persistent evidence |
+| Recovery | Handles workflow problems |
+| Memory | Preserves useful workflow history |
+| Reporting | Produces a final readiness report |
 
-with col1:
-    st.metric(" Planning", "Ready")
+---
 
-with col2:
-    st.metric(" Research", "Ready")
+# Streamlit Dashboard
 
-with col3:
-    st.metric(" Verification", "Ready")
+<p align="center">
+<img src="assets/LIFEOPS_Workflow.png" width="100%" alt="LIFEOPS Streamlit Workflow">
+</p>
 
-with col4:
-    st.metric(" Safety", "Active")
+LIFEOPS includes a visual Streamlit dashboard for running and monitoring the complete agent workflow.
 
-st.divider()
+**Run locally:**
 
-st.markdown("###  LIFEOPS Workflow")
+`.\.venv\Scripts\python.exe -m streamlit run .\ui\dashboard.py`
 
-st.markdown("""
-** Objective**  ** Plan**  ** Prioritize**  ** Research**
- ** Act**  ** Approval**  ** Verify**
- ** Recover**  ** Remember**  ** Report**
-""")
+**Dashboard:** http://localhost:8501
 
-st.divider()
+---
 
-st.image("assets/LIFEOPS_Workflow.png", width="stretch")
+# Architecture
 
-st.caption("LIFEOPS  Built for Agents for Humans Hackathon  Everyday Agents")
+<p align="center">
+<img src="docs/LIFEOPS_Architecture_Diagram.png" width="100%" alt="LIFEOPS Architecture Diagram">
+</p>
 
+<p align="center"><strong>Planner → Research → Action → Approval → Verification → Recovery → Memory → Report</strong></p>
 
-st.image("assets/LIFEOPS_Safety.png", width="stretch")
+**Architecture documentation:** [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)
 
-if "workflow_state" in st.session_state:
-    state = st.session_state["workflow_state"]
+---
 
-    st.divider()
-    st.markdown("##  LIVE WORKFLOW RESULTS")
+# LIFEOPS Workflow
 
-    tabs = st.tabs([
-        " Plan",
-        " Priority",
-        " Research",
-        " Action",
-        " Verification",
-        " Report"
-    ])
+<p align="center">
+<img src="assets/LIFEOPS_Workflow.png" width="100%" alt="LIFEOPS Workflow">
+</p>
 
-    with tabs[0]:
-        st.markdown("###  Planning")
-        display_result(state.plan)
+**Objective → Plan → Prioritize → Research → Act → Approval → Verify → Recover → Remember → Report**
 
-    with tabs[1]:
-        st.markdown("###  Prioritized Work")
-        display_result(state.priorities)
+---
 
-    with tabs[2]:
-        st.markdown("###  Research & Evidence")
-        display_result(state.research)
-        if state.evidence:
-            st.success(f"Persistent evidence records: {len(state.evidence)}")
+# Safety & Human Approval
 
-    with tabs[3]:
-        st.markdown("###  Actions")
-        display_result(state.action)
+<p align="center">
+<img src="assets/LIFEOPS_Safety.png" width="100%" alt="LIFEOPS Safety">
+</p>
 
-    with tabs[4]:
-        st.markdown("###  Verification")
-        display_result(state.verification)
+LIFEOPS is designed for safe autonomy.
 
-    with tabs[5]:
-        st.markdown("###  Final Readiness Report")
-        st.image("assets/LIFEOPS_Readiness_Report.png", width="stretch")
-        display_result(state.report)
+- Explicit approval for sensitive operations
+- Unauthorized actions are blocked
+- Approval replay is prevented
+- Sensitive operations are audited
+- Controlled file operations
+- No unrestricted shell execution
 
-        if state.errors:
-            st.error("Workflow issues detected")
-            for error in state.errors:
-                st.write(error)
+---
+
+# Evidence-Based Verification
+
+LIFEOPS separates action from verification.
+
+An agent claiming that something was completed is not treated as sufficient proof.
+
+Verification can use task state, audit records, research evidence, memory evidence, action results and persistent workflow state.
+
+**VERIFIED • UNVERIFIED • FAILED • BLOCKED**
+
+---
+
+# Readiness Report
+
+<p align="center">
+<img src="assets/LIFEOPS_Readiness_Report.png" width="100%" alt="LIFEOPS Readiness Report">
+</p>
+
+After the workflow completes, LIFEOPS produces a structured readiness report containing status, evidence, verification results, issues and next steps.
+
+---
+
+# Technology Stack
+
+<p align="center">
+<img src="https://img.shields.io/badge/Python-3.14-3776AB?style=flat-square&logo=python&logoColor=white">
+<img src="https://img.shields.io/badge/Streamlit-Dashboard-FF4B4B?style=flat-square&logo=streamlit&logoColor=white">
+<img src="https://img.shields.io/badge/Amazon%20Bedrock-AI-FF9900?style=flat-square&logo=amazonaws&logoColor=white">
+<img src="https://img.shields.io/badge/Strands%20Agents-Agent%20SDK-232F3E?style=flat-square">
+<img src="https://img.shields.io/badge/GitHub-Version%20Control-181717?style=flat-square&logo=github">
+</p>
+
+**Core:** Python • Strands Agents SDK • Amazon Bedrock • Qwen • Streamlit • Git/GitHub • Evidence Store • Approval Manager • Audit Logging • Workflow Memory
+
+---
+
+# Project Structure
+
+```text
+LIFEOPS/
+├── agents/
+│   ├── planner.py
+│   ├── priority.py
+│   ├── research.py
+│   ├── action.py
+│   └── verification.py
+├── app/
+│   └── orchestrator.py
+├── tools/
+├── ui/
+│   └── dashboard.py
+├── assets/
+│   ├── LIFEOPS_Hero_Banner.png
+│   ├── LIFEOPS_Logo.png
+│   ├── LIFEOPS_Workflow.png
+│   ├── LIFEOPS_Safety.png
+│   └── LIFEOPS_Readiness_Report.png
+├── docs/
+│   ├── ARCHITECTURE.md
+│   └── LIFEOPS_Architecture_Diagram.png
+├── tests/
+├── README.md
+├── LICENSE
+└── requirements.txt
+```
+
+---
+
+# Installation
+
+`git clone https://github.com/snehassneha4578-collab/LIFEOPS.git`
+
+`cd LIFEOPS`
+
+`python -m venv .venv`
+
+`pip install -r requirements.txt`
+
+**Start:**
+
+`.\.venv\Scripts\python.exe -m streamlit run .\ui\dashboard.py`
+
+---
+
+# Testing
+
+Core regression coverage includes:
+
+- Approval execution and replay protection
+- Blocking sensitive actions without approval
+- Memory evidence integrity
+- Report memory traceability
+- Task persistence
+- Verification memory traceability
+- Workflow memory retrieval
+
+---
+
+# Demo Video
+
+**Demo video: Coming soon**
+
+The final demonstration will show the complete LIFEOPS workflow, safety controls, verification and Streamlit dashboard.
+
+---
+
+# Hackathon
+
+**Agents for Humans Hackathon**
+
+**Track: Everyday Agents**
+
+Official event: https://agentsforhumans.devpost.com/
+
+---
+
+# Repository
+
+<p align="center">
+<a href="https://github.com/snehassneha4578-collab/LIFEOPS">
+<img src="https://img.shields.io/badge/VIEW%20SOURCE%20CODE-GitHub-181717?style=for-the-badge&logo=github">
+</a>
+</p>
+
+**GitHub:** https://github.com/snehassneha4578-collab/LIFEOPS
+
+---
+
+# Developer
+
+**Sneha S**
+
+ECE Student • AI/ML • Embedded Systems • VLSI
+
+---
+
+# License
+
+MIT License
+
+---
+
+<p align="center"><strong>LIFEOPS</strong><br>Autonomous operations with safety, evidence and verification.</p>
