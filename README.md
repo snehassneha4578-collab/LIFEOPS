@@ -1,33 +1,86 @@
-﻿# LIFEOPS — Autonomous Personal Operations Agent
+# 🚀 LIFEOPS — Autonomous Personal Operations Agent
 
-LIFEOPS is an autonomous personal operations agent built with the Strands Agents SDK and Amazon Bedrock. It turns real-life objectives into planned, actionable, verifiable workflows.
+<div align="center">
 
-## Why LIFEOPS
-Most AI assistants stop at generating an answer. LIFEOPS coordinates an objective from planning through action, verification, evidence, recovery, memory, and a final readiness report.
+## 🧠 Autonomous AI Operations Agent
 
-## Core Workflow
-Understand objective → Plan → Prioritize → Research → Act → Verify → Recover → Remember → Report
+**Plan → Research → Act → Verify → Recover → Remember → Report**
 
-## Key Capabilities
-- Multi-agent planning and prioritization
-- Source-bound web research with persistent evidence
-- Controlled task and workspace actions
-- Human approval for sensitive actions
-- Persistent verification and audit evidence
-- Failure recovery
-- Workflow memory and traceability
-- Regression-tested safety controls
-
-## Human-in-the-Loop Safety
-Sensitive actions require an externally approved exact approval. LIFEOPS cannot self-approve or bypass the approval boundary. Protected execution consumes one-time approvals and records the result in the audit trail.
-
-## Verification: AI Output ≠ Proof
-LIFEOPS separates generated conclusions from actual evidence. Verification can use persistent task state, research evidence, audit records, deadline tools, and memory evidence instead of trusting model output alone.
-
-## Architecture
 ![LIFEOPS Architecture](docs/LIFEOPS_Architecture_Diagram.png)
 
-## Technology Stack
+**🏆 Agents for Humans Hackathon · Everyday Agents**
+
+</div>
+
+---
+
+## 🌟 What is LIFEOPS?
+
+LIFEOPS is an autonomous personal operations agent built with the **Strands Agents SDK** and **Amazon Bedrock**. It turns real-life objectives into planned, actionable, verifiable workflows.
+
+## 💡 Why LIFEOPS?
+
+Most AI assistants stop at generating an answer. LIFEOPS coordinates an objective through planning, research, controlled action, verification, recovery, memory, and reporting.
+
+> 🧠 **AI output ≠ proof.**
+
+## 🔥 Core Workflow
+
+USER OBJECTIVE
+↓
+🧠 PLAN → 🎯 PRIORITIZE → 🔎 RESEARCH
+↓
+⚙️ ACT → 🛡️ HUMAN APPROVAL
+↓
+✅ VERIFY → 🔄 RECOVER → 🧠 REMEMBER
+↓
+📊 FINAL REPORT
+
+## ⚡ Key Capabilities
+
+| Capability | LIFEOPS |
+|---|---|
+| 🧠 Planning | Multi-agent planning and prioritization |
+| 🔎 Research | Source-bound research + persistent evidence |
+| ⚙️ Action | Controlled task and workspace actions |
+| 🛡️ Safety | Human approval for sensitive actions |
+| ✅ Verification | Evidence-based verification |
+| 🔄 Recovery | Failure recovery workflow |
+| 🧠 Memory | Persistent workflow memory |
+| 📋 Reporting | Traceable final reports |
+
+## 🛡️ Human-in-the-Loop Safety
+
+Sensitive actions require an externally approved exact approval. LIFEOPS cannot self-approve or bypass the approval boundary. Protected execution consumes one-time approvals and records the result in the audit trail.
+
+## 🔍 Verification
+
+LIFEOPS verifies results using persistent task state, research evidence, audit records, deadline information, and memory evidence instead of simply trusting model output.
+
+## 🧪 Regression Tests
+
+**7/7 tests passing** ✅
+
+- ✓ Approval execution and replay protection
+- ✓ Blocked execution without approval
+- ✓ Memory evidence integrity
+- ✓ Report memory traceability
+- ✓ Task creation persistence
+- ✓ Verification memory traceability
+- ✓ Workflow memory retrieval
+
+## 🏗️ Architecture
+
+![LIFEOPS Architecture](docs/LIFEOPS_Architecture_Diagram.png)
+
+## 💻 Technology Stack
+
+![Python](https://img.shields.io/badge/Python-3.14-blue?logo=python&logoColor=white)
+![Strands](https://img.shields.io/badge/Strands-Agents%20SDK-orange)
+![AWS](https://img.shields.io/badge/Amazon%20Bedrock-AWS-orange?logo=amazonaws&logoColor=white)
+![Tests](https://img.shields.io/badge/Tests-7%2F7-success)
+![License](https://img.shields.io/badge/License-MIT-green)
+
 - Python 3.14
 - Strands Agents SDK
 - Amazon Bedrock
@@ -35,35 +88,39 @@ LIFEOPS separates generated conclusions from actual evidence. Verification can u
 - Persistent JSON state stores
 - Git and GitHub
 
-## Project Structure
-- agents/ — specialized AI agents
-- tools/ — controlled tools and persistence
-- app/ — workflow orchestration
-- data/ — runtime state
-- reports/ — generated reports
-- docs/ — architecture documentation
-- tests/ — regression tests
+## 📁 Project Structure
 
-## Installation
-Use the project virtual environment and install dependencies from requirements.txt.
+LIFEOPS/
+├── agents/   → Specialized AI agents
+├── tools/    → Controlled tools and persistence
+├── app/      → Workflow orchestration
+├── data/     → Runtime state
+├── reports/  → Generated reports
+├── docs/     → Architecture documentation
+└── tests/    → Regression tests
 
-## Run
+## 🚀 Run
+
 python -m app.main
 
-## Testing
+## 🧪 Test
+
 python -m unittest discover -s tests -p "test_*.py" -v
 
-## Hackathon
-Built for the Agents for Humans Hackathon — Everyday Agents.
+## 🏆 Hackathon
 
-## Team
-Sneha S — Solo Developer
+**Agents for Humans Hackathon — Everyday Agents**
 
-## Demo
-The final demonstration will show LIFEOPS preparing a real hackathon submission objective, researching official requirements, inspecting project artifacts, creating actionable work, respecting approval boundaries, verifying results, and producing a traceable readiness report.
+## 👩‍💻 Developer
 
-## License
-MIT License. See LICENSE.
+**Sneha S** · Solo Developer
 
-## Status
-Core autonomous workflow, controlled actions, approval safety, verification, evidence, recovery, memory, auditability, architecture documentation, and regression testing are implemented.
+## 📜 License
+
+MIT License — see [LICENSE](LICENSE).
+
+<div align="center">
+
+**🚀 Turn objectives into verified progress.**
+
+</div>
