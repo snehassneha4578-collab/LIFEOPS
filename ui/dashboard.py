@@ -2,6 +2,20 @@
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 import streamlit as st
+
+def display_result(result):
+    if result is None:
+        return
+    if hasattr(result, 'message'):
+        message = result.message
+        if isinstance(message, dict):
+            content = message.get('content', [])
+            texts = [item.get('text', '') for item in content if isinstance(item, dict) and item.get('text')]
+            if texts:
+                st.markdown('\n\n'.join(texts))
+                return
+    st.write(result)
+
 from app.orchestrator import orchestrate
 
 st.set_page_config(
@@ -82,29 +96,29 @@ if "workflow_state" in st.session_state:
 
     with tabs[0]:
         st.markdown("### 🧠 Planning")
-        st.write(state.plan)
+        display_result(state.plan)
 
     with tabs[1]:
         st.markdown("### 🎯 Prioritized Work")
-        st.write(state.priorities)
+        display_result(state.priorities)
 
     with tabs[2]:
         st.markdown("### 🔎 Research & Evidence")
-        st.write(state.research)
+        display_result(state.research)
         if state.evidence:
             st.success(f"Persistent evidence records: {len(state.evidence)}")
 
     with tabs[3]:
         st.markdown("### ⚙️ Actions")
-        st.write(state.action)
+        display_result(state.action)
 
     with tabs[4]:
         st.markdown("### ✅ Verification")
-        st.write(state.verification)
+        display_result(state.verification)
 
     with tabs[5]:
         st.markdown("### 📊 Final Readiness Report")
-        st.write(state.report)
+        display_result(state.report)
 
         if state.errors:
             st.error("Workflow issues detected")
