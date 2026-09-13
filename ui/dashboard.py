@@ -25,7 +25,7 @@ st.set_page_config(
 )
 
 st.title(" LIFEOPS")
-st.image("assets/LIFEOPS_Hero_Banner.png", use_container_width=True)
+st.image("assets/LIFEOPS_Hero_Banner.png", width="stretch")
 st.subheader("Autonomous Personal Operations Agent")
 st.caption("Plan  Research  Act  Verify  Recover  Remember  Report")
 
@@ -77,12 +77,12 @@ st.markdown("""
 
 st.divider()
 
-st.image("assets/LIFEOPS_Workflow.png", use_container_width=True)
+st.image("assets/LIFEOPS_Workflow.png", width="stretch")
 
 st.caption("LIFEOPS  Built for Agents for Humans Hackathon  Everyday Agents")
 
 
-st.image("assets/LIFEOPS_Safety.png", use_container_width=True)
+st.image("assets/LIFEOPS_Safety.png", width="stretch")
 
 if "workflow_state" in st.session_state:
     state = st.session_state["workflow_state"]
@@ -123,12 +123,13 @@ if "workflow_state" in st.session_state:
 
     with tabs[5]:
         st.markdown("###  Final Readiness Report")
-        st.image("assets/LIFEOPS_Readiness_Report.png", use_container_width=True)
+        st.image("assets/LIFEOPS_Readiness_Report.png", width="stretch")
         display_result(state.report)
 
         if state.errors:
             st.error("Workflow issues detected")
             for error in state.errors:
                 st.write(error)
+
 
 
