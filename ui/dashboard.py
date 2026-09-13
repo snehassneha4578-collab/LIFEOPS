@@ -25,6 +25,7 @@ st.set_page_config(
 )
 
 st.title("🚀 LIFEOPS")
+st.image("assets/LIFEOPS_Hero_Banner.png", use_container_width=True)
 st.subheader("Autonomous Personal Operations Agent")
 st.caption("Plan → Research → Act → Verify → Recover → Remember → Report")
 
@@ -124,3 +125,4 @@ if "workflow_state" in st.session_state:
             st.error("Workflow issues detected")
             for error in state.errors:
                 st.write(error)
+
