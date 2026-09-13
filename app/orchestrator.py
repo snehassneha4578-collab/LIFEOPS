@@ -10,6 +10,7 @@ from agents.recovery import recover_workflow
 from tools.workflow_memory import save_workflow
 from tools.workflow_memory_agent import recall_workflow, remember_workflow
 from tools.evidence_store import list_evidence
+from concurrent.futures import ThreadPoolExecutor
 
 
 def orchestrate(request: str):
@@ -48,15 +49,19 @@ Return exact file paths and what each artifact contains.
 """
 
     try:
-        state.plan = create_plan(
+        plan_request = (
             f"Previous relevant LIFEOPS memory:\n"
             f"{recall_workflow(request)}\n\n"
             f"Current request:\n{request}"
         )
 
-        state.priorities = prioritize(str(state.plan))
+        with ThreadPoolExecutor(max_workers=2) as executor:
+            plan_future = executor.submit(create_plan, plan_request)
+            research_future = executor.submit(research_task, research_request)
+            state.plan = plan_future.result()
+            state.research = research_future.result()
 
-        state.research = research_task(research_request)
+        state.priorities = prioritize(str(state.plan))
 
         state.evidence = list_evidence()
 
