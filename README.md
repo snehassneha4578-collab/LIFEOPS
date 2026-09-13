@@ -6,7 +6,7 @@
 
 <p align="center"><strong>Autonomous Personal Operations Agent</strong></p>
 
-<p align="center">Plan • Research • Act • Approve • Verify • Recover • Remember • Report</p>
+<p align="center">Plan â€¢ Research â€¢ Act â€¢ Approve â€¢ Verify â€¢ Recover â€¢ Remember â€¢ Report</p>
 
 <p align="center">
 <a href="https://github.com/snehassneha4578-collab/LIFEOPS"><img src="https://img.shields.io/badge/GitHub-LIFEOPS-181717?style=for-the-badge&logo=github"></a>
@@ -22,7 +22,7 @@
 
 LIFEOPS takes a real-world objective and turns it into a structured, evidence-backed workflow.
 
-**Plan → Research → Act safely → Verify → Recover → Remember → Report**
+**Plan â†’ Research â†’ Act safely â†’ Verify â†’ Recover â†’ Remember â†’ Report**
 
 ## What LIFEOPS Does
 
@@ -62,7 +62,7 @@ LIFEOPS includes a visual Streamlit dashboard for running and monitoring the com
 <img src="docs/LIFEOPS_Architecture_Diagram.png" width="100%" alt="LIFEOPS Architecture Diagram">
 </p>
 
-<p align="center"><strong>Planner → Research → Action → Approval → Verification → Recovery → Memory → Report</strong></p>
+<p align="center"><strong>Planner â†’ Research â†’ Action â†’ Approval â†’ Verification â†’ Recovery â†’ Memory â†’ Report</strong></p>
 
 **Architecture documentation:** [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)
 
@@ -74,7 +74,7 @@ LIFEOPS includes a visual Streamlit dashboard for running and monitoring the com
 <img src="assets/LIFEOPS_Workflow.png" width="100%" alt="LIFEOPS Workflow">
 </p>
 
-**Objective → Plan → Prioritize → Research → Act → Approval → Verify → Recover → Remember → Report**
+**Objective â†’ Plan â†’ Prioritize â†’ Research â†’ Act â†’ Approval â†’ Verify â†’ Recover â†’ Remember â†’ Report**
 
 ---
 
@@ -103,7 +103,7 @@ An agent claiming that something was completed is not treated as sufficient proo
 
 Verification can use task state, audit records, research evidence, memory evidence, action results and persistent workflow state.
 
-**VERIFIED • UNVERIFIED • FAILED • BLOCKED**
+**VERIFIED â€¢ UNVERIFIED â€¢ FAILED â€¢ BLOCKED**
 
 ---
 
@@ -127,7 +127,7 @@ After the workflow completes, LIFEOPS produces a structured readiness report con
 <img src="https://img.shields.io/badge/GitHub-Version%20Control-181717?style=flat-square&logo=github">
 </p>
 
-**Core:** Python • Strands Agents SDK • Amazon Bedrock • Qwen • Streamlit • Git/GitHub • Evidence Store • Approval Manager • Audit Logging • Workflow Memory
+**Core:** Python â€¢ Strands Agents SDK â€¢ Amazon Bedrock â€¢ Qwen â€¢ Streamlit â€¢ Git/GitHub â€¢ Evidence Store â€¢ Approval Manager â€¢ Audit Logging â€¢ Workflow Memory
 
 ---
 
@@ -135,30 +135,30 @@ After the workflow completes, LIFEOPS produces a structured readiness report con
 
 ```text
 LIFEOPS/
-├── agents/
-│   ├── planner.py
-│   ├── priority.py
-│   ├── research.py
-│   ├── action.py
-│   └── verification.py
-├── app/
-│   └── orchestrator.py
-├── tools/
-├── ui/
-│   └── dashboard.py
-├── assets/
-│   ├── LIFEOPS_Hero_Banner.png
-│   ├── LIFEOPS_Logo.png
-│   ├── LIFEOPS_Workflow.png
-│   ├── LIFEOPS_Safety.png
-│   └── LIFEOPS_Readiness_Report.png
-├── docs/
-│   ├── ARCHITECTURE.md
-│   └── LIFEOPS_Architecture_Diagram.png
-├── tests/
-├── README.md
-├── LICENSE
-└── requirements.txt
+â”œâ”€â”€ agents/
+â”‚   â”œâ”€â”€ planner.py
+â”‚   â”œâ”€â”€ priority.py
+â”‚   â”œâ”€â”€ research.py
+â”‚   â”œâ”€â”€ action.py
+â”‚   â””â”€â”€ verification.py
+â”œâ”€â”€ app/
+â”‚   â””â”€â”€ orchestrator.py
+â”œâ”€â”€ tools/
+â”œâ”€â”€ ui/
+â”‚   â””â”€â”€ dashboard.py
+â”œâ”€â”€ assets/
+â”‚   â”œâ”€â”€ LIFEOPS_Hero_Banner.png
+â”‚   â”œâ”€â”€ LIFEOPS_Logo.png
+â”‚   â”œâ”€â”€ LIFEOPS_Workflow.png
+â”‚   â”œâ”€â”€ LIFEOPS_Safety.png
+â”‚   â””â”€â”€ LIFEOPS_Readiness_Report.png
+â”œâ”€â”€ docs/
+â”‚   â”œâ”€â”€ ARCHITECTURE.md
+â”‚   â””â”€â”€ LIFEOPS_Architecture_Diagram.png
+â”œâ”€â”€ tests/
+â”œâ”€â”€ README.md
+â”œâ”€â”€ LICENSE
+â””â”€â”€ requirements.txt
 ```
 
 ---
@@ -227,7 +227,7 @@ Official event: https://agentsforhumans.devpost.com/
 
 **Sneha S**
 
-ECE Student • AI/ML • Embedded Systems • VLSI
+ECE Student â€¢ AI/ML â€¢ Embedded Systems â€¢ VLSI
 
 ---
 
