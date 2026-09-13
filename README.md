@@ -56,7 +56,6 @@ LIFEOPS is an autonomous personal operations agent designed to transform a real-
 📊 Reporting| Produces a structured final readiness report
 
 ---
-
 🖥️ Streamlit Dashboard
 
 <p align="center">
@@ -67,11 +66,20 @@ LIFEOPS is an autonomous personal operations agent designed to transform a real-
 
 .\.venv\Scripts\python.exe -m streamlit run .\ui\dashboard.py
 
-🌐 Dashboard
+🌐 Open Dashboard
+
+After starting the application, open the following address in your browser:
 
 http://localhost:8501
 
----
+«⚠️ Note: "localhost:8501" is a local development address.
+It works only on the computer where the LIFEOPS Streamlit application is running. It is not a public online link.»
+
+🚀 Live Demo
+
+«🔗 Live dashboard deployment: Coming Soon»
+
+Once LIFEOPS is deployed online, the public Streamlit URL will be added here.
 
 🏗️ Architecture
 
