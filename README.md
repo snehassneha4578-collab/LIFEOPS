@@ -6,7 +6,6 @@
 
 **Plan → Research → Act → Verify → Recover → Remember → Report**
 
-![LIFEOPS Architecture](docs/LIFEOPS_Architecture_Diagram.png)
 
 **🏆 Agents for Humans Hackathon · Everyday Agents**
 
@@ -70,6 +69,11 @@ LIFEOPS verifies results using persistent task state, research evidence, audit r
 - ✓ Workflow memory retrieval
 
 ## 🏗️ Architecture
+
+LIFEOPS Architecture
+
+![LIFEOPS Architecture](docs/LIFEOPS_Architecture_Diagram.png)
+
 
 ![LIFEOPS Architecture](docs/LIFEOPS_Architecture_Diagram.png)
 
