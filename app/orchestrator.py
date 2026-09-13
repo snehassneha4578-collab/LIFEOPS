@@ -61,7 +61,11 @@ Return exact file paths and what each artifact contains.
             state.plan = plan_future.result()
             state.research = research_future.result()
 
-        state.priorities = prioritize(str(state.plan))
+        # FAST DEMO MODE:
+        # Planner already produces priority information, so avoid a
+        # redundant second LLM call. This keeps Planner, Research,
+        # Action, Verification, and Report in the workflow.
+        state.priorities = state.plan
 
         state.evidence = list_evidence()
 
