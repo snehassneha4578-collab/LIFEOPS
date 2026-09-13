@@ -70,7 +70,6 @@ LIFEOPS is an autonomous personal operations agent designed to transform a real-
 🌐 Dashboard
 
 http://localhost:8501
-
 ---
 
 🏗️ Architecture
