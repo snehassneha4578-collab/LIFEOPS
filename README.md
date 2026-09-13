@@ -1,135 +1,132 @@
-﻿#  LIFEOPS  Autonomous Personal Operations Agent
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+import streamlit as st
 
-<div align="center">
+def display_result(result):
+    if result is None:
+        return
+    if hasattr(result, 'message'):
+        message = result.message
+        if isinstance(message, dict):
+            content = message.get('content', [])
+            texts = [item.get('text', '') for item in content if isinstance(item, dict) and item.get('text')]
+            if texts:
+                st.markdown('\n\n'.join(texts))
+                return
+    st.write(result)
 
-##  Autonomous AI Operations Agent
+from app.orchestrator import orchestrate
 
-**Plan  Research  Act  Verify  Recover  Remember  Report**
+st.set_page_config(
+    page_title="LIFEOPS",
+    page_icon="",
+    layout="wide"
+)
 
+st.title(" LIFEOPS")
+st.image("assets/LIFEOPS_Hero_Banner.png", width="stretch")
+st.subheader("Autonomous Personal Operations Agent")
+st.caption("Plan  Research  Act  Verify  Recover  Remember  Report")
 
-** Agents for Humans Hackathon  Everyday Agents**
+st.divider()
 
-</div>
+st.markdown("###  Mission")
+st.info("Give LIFEOPS a real-world objective and watch the workflow progress from planning to verified results.")
 
----
+objective = st.text_area(
+    "What should LIFEOPS accomplish?",
+    placeholder="Example: Prepare everything I need to submit my hackathon project."
+)
 
-##  What is LIFEOPS?
+if st.button(" Run LIFEOPS", type="primary"):
+    if not objective.strip():
+        st.warning("Please enter an objective.")
+    else:
+        st.session_state["objective"] = objective
+        with st.spinner("LIFEOPS is working..."):
+            state = orchestrate(objective)
+        st.session_state["workflow_state"] = state
+        st.success("LIFEOPS workflow completed.")
 
-LIFEOPS is an autonomous personal operations agent built with the **Strands Agents SDK** and **Amazon Bedrock**. It turns real-life objectives into planned, actionable, verifiable workflows.
+st.divider()
 
-##  Why LIFEOPS?
+col1, col2, col3, col4 = st.columns(4)
 
-Most AI assistants stop at generating an answer. LIFEOPS coordinates an objective through planning, research, controlled action, verification, recovery, memory, and reporting.
+with col1:
+    st.metric(" Planning", "Ready")
 
->  **AI output  proof.**
+with col2:
+    st.metric(" Research", "Ready")
 
-##  Core Workflow
+with col3:
+    st.metric(" Verification", "Ready")
 
-USER OBJECTIVE
+with col4:
+    st.metric(" Safety", "Active")
 
- PLAN   PRIORITIZE   RESEARCH
+st.divider()
 
- ACT   HUMAN APPROVAL
+st.markdown("###  LIFEOPS Workflow")
 
- VERIFY   RECOVER   REMEMBER
+st.markdown("""
+** Objective**  ** Plan**  ** Prioritize**  ** Research**
+ ** Act**  ** Approval**  ** Verify**
+ ** Recover**  ** Remember**  ** Report**
+""")
 
- FINAL REPORT
+st.divider()
 
-##  Key Capabilities
+st.image("assets/LIFEOPS_Workflow.png", width="stretch")
 
-| Capability | LIFEOPS |
-|---|---|
-|  Planning | Multi-agent planning and prioritization |
-|  Research | Source-bound research + persistent evidence |
-|  Action | Controlled task and workspace actions |
-|  Safety | Human approval for sensitive actions |
-|  Verification | Evidence-based verification |
-|  Recovery | Failure recovery workflow |
-|  Memory | Persistent workflow memory |
-|  Reporting | Traceable final reports |
-
-##  Human-in-the-Loop Safety
-
-Sensitive actions require an externally approved exact approval. LIFEOPS cannot self-approve or bypass the approval boundary. Protected execution consumes one-time approvals and records the result in the audit trail.
-
-##  Verification
-
-LIFEOPS verifies results using persistent task state, research evidence, audit records, deadline information, and memory evidence instead of simply trusting model output.
-
-##  Regression Tests
-
-**7/7 tests passing** 
-
--  Approval execution and replay protection
--  Blocked execution without approval
--  Memory evidence integrity
--  Report memory traceability
--  Task creation persistence
--  Verification memory traceability
--  Workflow memory retrieval
-
-##  Architecture
-
-
-LIFEOPS Architecture
-
-![LIFEOPS Architecture](docs/LIFEOPS_Architecture_Diagram.png)
-LIFEOPS Architecture
-
-
-
-
+st.caption("LIFEOPS  Built for Agents for Humans Hackathon  Everyday Agents")
 
 
-##  Technology Stack
+st.image("assets/LIFEOPS_Safety.png", width="stretch")
 
-![Python](https://img.shields.io/badge/Python-3.14-blue?logo=python&logoColor=white)
-![Strands](https://img.shields.io/badge/Strands-Agents%20SDK-orange)
-![AWS](https://img.shields.io/badge/Amazon%20Bedrock-AWS-orange?logo=amazonaws&logoColor=white)
-![Tests](https://img.shields.io/badge/Tests-7%2F7-success)
-![License](https://img.shields.io/badge/License-MIT-green)
+if "workflow_state" in st.session_state:
+    state = st.session_state["workflow_state"]
 
-- Python 3.14
-- Strands Agents SDK
-- Amazon Bedrock
-- Qwen3-Coder-Next
-- Persistent JSON state stores
-- Git and GitHub
+    st.divider()
+    st.markdown("##  LIVE WORKFLOW RESULTS")
 
-##  Project Structure
+    tabs = st.tabs([
+        " Plan",
+        " Priority",
+        " Research",
+        " Action",
+        " Verification",
+        " Report"
+    ])
 
-LIFEOPS/
- agents/    Specialized AI agents
- tools/     Controlled tools and persistence
- app/       Workflow orchestration
- data/      Runtime state
- reports/   Generated reports
- docs/      Architecture documentation
- tests/     Regression tests
+    with tabs[0]:
+        st.markdown("###  Planning")
+        display_result(state.plan)
 
-##  Run
+    with tabs[1]:
+        st.markdown("###  Prioritized Work")
+        display_result(state.priorities)
 
-python -m app.main
+    with tabs[2]:
+        st.markdown("###  Research & Evidence")
+        display_result(state.research)
+        if state.evidence:
+            st.success(f"Persistent evidence records: {len(state.evidence)}")
 
-##  Test
+    with tabs[3]:
+        st.markdown("###  Actions")
+        display_result(state.action)
 
-python -m unittest discover -s tests -p "test_*.py" -v
+    with tabs[4]:
+        st.markdown("###  Verification")
+        display_result(state.verification)
 
-##  Hackathon
+    with tabs[5]:
+        st.markdown("###  Final Readiness Report")
+        st.image("assets/LIFEOPS_Readiness_Report.png", width="stretch")
+        display_result(state.report)
 
-**Agents for Humans Hackathon  Everyday Agents**
-
-##  Developer
-
-**Sneha S**  Solo Developer
-
-##  License
-
-MIT License  see [LICENSE](LICENSE).
-
-<div align="center">
-
-** Turn objectives into verified progress.**
-
-</div>
-
+        if state.errors:
+            st.error("Workflow issues detected")
+            for error in state.errors:
+                st.write(error)
