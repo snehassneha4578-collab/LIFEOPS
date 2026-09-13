@@ -131,36 +131,6 @@ After the workflow completes, LIFEOPS produces a structured readiness report con
 
 ---
 
-# Project Structure
-
-```text
-LIFEOPS/
-â”œâ”€â”€ agents/
-â”‚   â”œâ”€â”€ planner.py
-â”‚   â”œâ”€â”€ priority.py
-â”‚   â”œâ”€â”€ research.py
-â”‚   â”œâ”€â”€ action.py
-â”‚   â””â”€â”€ verification.py
-â”œâ”€â”€ app/
-â”‚   â””â”€â”€ orchestrator.py
-â”œâ”€â”€ tools/
-â”œâ”€â”€ ui/
-â”‚   â””â”€â”€ dashboard.py
-â”œâ”€â”€ assets/
-â”‚   â”œâ”€â”€ LIFEOPS_Hero_Banner.png
-â”‚   â”œâ”€â”€ LIFEOPS_Logo.png
-â”‚   â”œâ”€â”€ LIFEOPS_Workflow.png
-â”‚   â”œâ”€â”€ LIFEOPS_Safety.png
-â”‚   â””â”€â”€ LIFEOPS_Readiness_Report.png
-â”œâ”€â”€ docs/
-â”‚   â”œâ”€â”€ ARCHITECTURE.md
-â”‚   â””â”€â”€ LIFEOPS_Architecture_Diagram.png
-â”œâ”€â”€ tests/
-â”œâ”€â”€ README.md
-â”œâ”€â”€ LICENSE
-â””â”€â”€ requirements.txt
-```
-
 ---
 
 # Installation
