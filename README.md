@@ -1,210 +1,305 @@
 <p align="center">
-<img src="assets/LIFEOPS_Hero_Banner.png" width="100%" alt="LIFEOPS">
-</p>
+  <img src="assets/LIFEOPS_Hero_Banner.png" width="100%" alt="LIFEOPS — Autonomous Personal Operations Agent">
+</p><h1 align="center">🚀 LIFEOPS</h1><p align="center">
+  <strong>Autonomous Personal Operations Agent</strong>
+</p><p align="center">
+  <strong>Plan • Research • Act • Approve • Verify • Recover • Remember • Report</strong>
+</p><p align="center">
+  <a href="https://github.com/snehassneha4578-collab/LIFEOPS">
+    <img src="https://img.shields.io/badge/GitHub-LIFEOPS-181717?style=for-the-badge&logo=github">
+  </a>
+  <a href="https://agentsforhumans.devpost.com/">
+    <img src="https://img.shields.io/badge/Agents%20for%20Humans-Hackathon-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white">
+  </a>
+  <img src="https://img.shields.io/badge/Python-3.14-3776AB?style=for-the-badge&logo=python&logoColor=white">
+  <img src="https://img.shields.io/badge/Strands%20Agents-SDK-232F3E?style=for-the-badge">
+  <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge">
+</p>---
 
-<h1 align="center">LIFEOPS</h1>
+🌟 Mission
 
-<p align="center"><strong>Autonomous Personal Operations Agent</strong></p>
+LIFEOPS is an autonomous personal operations agent designed to transform a real-world objective into a structured, evidence-backed and safely executed workflow.
 
-<p align="center">Plan â€¢ Research â€¢ Act â€¢ Approve â€¢ Verify â€¢ Recover â€¢ Remember â€¢ Report</p>
+🧠 Core Lifecycle
+
+<p align="center">🎯 <strong>Objective</strong>
+ → 
+🧠 <strong>Plan</strong>
+ → 
+🔎 <strong>Research</strong>
+ → 
+⚙️ <strong>Act</strong>
+ → 
+🛡️ <strong>Approve</strong>
+ → 
+✅ <strong>Verify</strong>
+ → 
+🔄 <strong>Recover</strong>
+ → 
+🧠 <strong>Remember</strong>
+ → 
+📊 <strong>Report</strong>
+
+</p>---
+
+🚀 What LIFEOPS Does
+
+🧩 Capability| 💡 Description
+🧠 Planning| Converts real-world objectives into structured tasks
+🔎 Research| Researches information and preserves supporting evidence
+⚙️ Action| Executes controlled and policy-aware actions
+🛡️ Approval| Requires human approval for sensitive operations
+🔐 Safety| Blocks unauthorized or unsafe sensitive actions
+✅ Verification| Validates results using persistent evidence
+🔄 Recovery| Handles workflow failures and recovery paths
+🧠 Memory| Preserves useful workflow history and evidence
+📊 Reporting| Produces a structured final readiness report
+
+---
+
+🖥️ Streamlit Dashboard
 
 <p align="center">
-<a href="https://github.com/snehassneha4578-collab/LIFEOPS"><img src="https://img.shields.io/badge/GitHub-LIFEOPS-181717?style=for-the-badge&logo=github"></a>
-<a href="https://agentsforhumans.devpost.com/"><img src="https://img.shields.io/badge/Agents%20for%20Humans-Hackathon-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white"></a>
-<img src="https://img.shields.io/badge/Python-3.14-3776AB?style=for-the-badge&logo=python&logoColor=white">
-<img src="https://img.shields.io/badge/Strands%20Agents-SDK-232F3E?style=for-the-badge">
-<img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge">
-</p>
+  <img src="assets/LIFEOPS_Workflow.png" width="100%" alt="LIFEOPS Streamlit Workflow">
+</p>LIFEOPS includes a visual Streamlit dashboard for running and monitoring the complete agent workflow.
+
+▶️ Run Locally
+
+.\.venv\Scripts\python.exe -m streamlit run .\ui\dashboard.py
+
+🌐 Dashboard
+
+http://localhost:8501
 
 ---
 
-## Mission
-
-LIFEOPS takes a real-world objective and turns it into a structured, evidence-backed workflow.
-
-**Plan â†’ Research â†’ Act safely â†’ Verify â†’ Recover â†’ Remember â†’ Report**
-
-## What LIFEOPS Does
-
-| Capability | Description |
-|---|---|
-| Planning | Converts objectives into structured tasks |
-| Research | Researches information and preserves evidence |
-| Action | Executes controlled actions |
-| Approval | Requires approval for sensitive operations |
-| Safety | Blocks unauthorized sensitive actions |
-| Verification | Checks persistent evidence |
-| Recovery | Handles workflow problems |
-| Memory | Preserves useful workflow history |
-| Reporting | Produces a final readiness report |
-
----
-
-# Streamlit Dashboard
+🏗️ Architecture
 
 <p align="center">
-<img src="assets/LIFEOPS_Workflow.png" width="100%" alt="LIFEOPS Streamlit Workflow">
-</p>
-
-LIFEOPS includes a visual Streamlit dashboard for running and monitoring the complete agent workflow.
-
-**Run locally:**
-
-`.\.venv\Scripts\python.exe -m streamlit run .\ui\dashboard.py`
-
-**Dashboard:** http://localhost:8501
+  <img src="docs/LIFEOPS_Architecture_Diagram.png" width="100%" alt="LIFEOPS Architecture Diagram">
+</p><p align="center">
+  <strong>
+    Planner → Research → Action → Approval → Verification → Recovery → Memory → Report
+  </strong>
+</p>📘 Architecture Documentation:
+"docs/ARCHITECTURE.md" (docs/ARCHITECTURE.md)
 
 ---
 
-# Architecture
+🔄 LIFEOPS Workflow
 
 <p align="center">
-<img src="docs/LIFEOPS_Architecture_Diagram.png" width="100%" alt="LIFEOPS Architecture Diagram">
-</p>
+  <img src="assets/LIFEOPS_Workflow.png" width="100%" alt="LIFEOPS Workflow">
+</p>Complete Workflow
 
-<p align="center"><strong>Planner â†’ Research â†’ Action â†’ Approval â†’ Verification â†’ Recovery â†’ Memory â†’ Report</strong></p>
-
-**Architecture documentation:** [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)
+🎯 Objective
+↓
+🧠 Plan
+↓
+📌 Prioritize
+↓
+🔎 Research
+↓
+⚙️ Act
+↓
+🛡️ Approval
+↓
+✅ Verify
+↓
+🔄 Recover
+↓
+🧠 Remember
+↓
+📊 Report
 
 ---
 
-# LIFEOPS Workflow
+🛡️ Safety & Human Approval
 
 <p align="center">
-<img src="assets/LIFEOPS_Workflow.png" width="100%" alt="LIFEOPS Workflow">
-</p>
+  <img src="assets/LIFEOPS_Safety.png" width="100%" alt="LIFEOPS Safety Architecture">
+</p>LIFEOPS is designed around safe autonomy, ensuring that autonomous execution does not bypass human control or verification.
 
-**Objective â†’ Plan â†’ Prioritize â†’ Research â†’ Act â†’ Approval â†’ Verify â†’ Recover â†’ Remember â†’ Report**
+🔐 Safety Principles
 
----
+- ✅ Explicit approval for sensitive operations
+- 🚫 Unauthorized actions are blocked
+- 🔁 Approval replay is prevented
+- 📝 Sensitive operations are audited
+- 📁 Controlled file operations
+- 🚫 No unrestricted shell execution
+- 👤 Human oversight for high-impact actions
 
-# Safety & Human Approval
-
-<p align="center">
-<img src="assets/LIFEOPS_Safety.png" width="100%" alt="LIFEOPS Safety">
-</p>
-
-LIFEOPS is designed for safe autonomy.
-
-- Explicit approval for sensitive operations
-- Unauthorized actions are blocked
-- Approval replay is prevented
-- Sensitive operations are audited
-- Controlled file operations
-- No unrestricted shell execution
+«LIFEOPS does not treat autonomy as permission to perform everything. Safety and human control remain part of the workflow.»
 
 ---
 
-# Evidence-Based Verification
+🔍 Evidence-Based Verification
 
 LIFEOPS separates action from verification.
 
-An agent claiming that something was completed is not treated as sufficient proof.
+An agent claiming that an operation was completed is not considered sufficient proof.
 
-Verification can use task state, audit records, research evidence, memory evidence, action results and persistent workflow state.
+Verification can use:
 
-**VERIFIED â€¢ UNVERIFIED â€¢ FAILED â€¢ BLOCKED**
+- 📌 Task state
+- 📝 Audit records
+- 🔎 Research evidence
+- 🧠 Memory evidence
+- ⚙️ Action results
+- 💾 Persistent workflow state
 
----
+Verification States
 
-# Readiness Report
+<p align="center">🟢 <strong>VERIFIED</strong>
+  •  
+🟡 <strong>UNVERIFIED</strong>
+  •  
+🔴 <strong>FAILED</strong>
+  •  
+⛔ <strong>BLOCKED</strong>
 
-<p align="center">
-<img src="assets/LIFEOPS_Readiness_Report.png" width="100%" alt="LIFEOPS Readiness Report">
-</p>
+</p>---
 
-After the workflow completes, LIFEOPS produces a structured readiness report containing status, evidence, verification results, issues and next steps.
-
----
-
-# Technology Stack
-
-<p align="center">
-<img src="https://img.shields.io/badge/Python-3.14-3776AB?style=flat-square&logo=python&logoColor=white">
-<img src="https://img.shields.io/badge/Streamlit-Dashboard-FF4B4B?style=flat-square&logo=streamlit&logoColor=white">
-<img src="https://img.shields.io/badge/Amazon%20Bedrock-AI-FF9900?style=flat-square&logo=amazonaws&logoColor=white">
-<img src="https://img.shields.io/badge/Strands%20Agents-Agent%20SDK-232F3E?style=flat-square">
-<img src="https://img.shields.io/badge/GitHub-Version%20Control-181717?style=flat-square&logo=github">
-</p>
-
-**Core:** Python â€¢ Strands Agents SDK â€¢ Amazon Bedrock â€¢ Qwen â€¢ Streamlit â€¢ Git/GitHub â€¢ Evidence Store â€¢ Approval Manager â€¢ Audit Logging â€¢ Workflow Memory
-
----
-
----
-
-# Installation
-
-`git clone https://github.com/snehassneha4578-collab/LIFEOPS.git`
-
-`cd LIFEOPS`
-
-`python -m venv .venv`
-
-`pip install -r requirements.txt`
-
-**Start:**
-
-`.\.venv\Scripts\python.exe -m streamlit run .\ui\dashboard.py`
-
----
-
-# Testing
-
-Core regression coverage includes:
-
-- Approval execution and replay protection
-- Blocking sensitive actions without approval
-- Memory evidence integrity
-- Report memory traceability
-- Task persistence
-- Verification memory traceability
-- Workflow memory retrieval
-
----
-
-# Demo Video
-
-**Demo video: Coming soon**
-
-The final demonstration will show the complete LIFEOPS workflow, safety controls, verification and Streamlit dashboard.
-
----
-
-# Hackathon
-
-**Agents for Humans Hackathon**
-
-**Track: Everyday Agents**
-
-Official event: https://agentsforhumans.devpost.com/
-
----
-
-# Repository
+📊 Readiness Report
 
 <p align="center">
-<a href="https://github.com/snehassneha4578-collab/LIFEOPS">
-<img src="https://img.shields.io/badge/VIEW%20SOURCE%20CODE-GitHub-181717?style=for-the-badge&logo=github">
-</a>
-</p>
+  <img src="assets/LIFEOPS_Readiness_Report.png" width="100%" alt="LIFEOPS Readiness Report">
+</p>After the workflow completes, LIFEOPS generates a structured Readiness Report containing:
 
-**GitHub:** https://github.com/snehassneha4578-collab/LIFEOPS
-
----
-
-# Developer
-
-**Sneha S**
-
-ECE Student â€¢ AI/ML â€¢ Embedded Systems â€¢ VLSI
+📋 Report Section| 🔎 Purpose
+🎯 Objective| Original real-world goal
+📊 Status| Current workflow state
+📚 Evidence| Supporting evidence collected
+✅ Verification| Verification results
+⚠️ Issues| Problems or unresolved items
+🔄 Recovery| Recovery actions taken
+🧠 Memory| Relevant workflow memory
+🚀 Next Steps| Recommended actions
 
 ---
 
-# License
+🧰 Technology Stack
 
-MIT License
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.14-3776AB?style=flat-square&logo=python&logoColor=white">
+  <img src="https://img.shields.io/badge/Streamlit-Dashboard-FF4B4B?style=flat-square&logo=streamlit&logoColor=white">
+  <img src="https://img.shields.io/badge/Amazon%20Bedrock-AI-FF9900?style=flat-square&logo=amazonaws&logoColor=white">
+  <img src="https://img.shields.io/badge/Strands%20Agents-Agent%20SDK-232F3E?style=flat-square">
+  <img src="https://img.shields.io/badge/GitHub-Version%20Control-181717?style=flat-square&logo=github">
+</p>🔧 Core Technologies
+
+Python • Strands Agents SDK • Amazon Bedrock • Qwen • Streamlit • Git/GitHub • Evidence Store • Approval Manager • Audit Logging • Workflow Memory
 
 ---
 
-<p align="center"><strong>LIFEOPS</strong><br>Autonomous operations with safety, evidence and verification.</p>
+📦 Installation
+
+1️⃣ Clone the Repository
+
+git clone https://github.com/snehassneha4578-collab/LIFEOPS.git
+
+2️⃣ Enter the Project
+
+cd LIFEOPS
+
+3️⃣ Create Virtual Environment
+
+python -m venv .venv
+
+4️⃣ Install Dependencies
+
+pip install -r requirements.txt
+
+5️⃣ Start LIFEOPS
+
+.\.venv\Scripts\python.exe -m streamlit run .\ui\dashboard.py
+
+---
+
+🧪 Testing
+
+LIFEOPS includes regression coverage for important safety, verification and memory components.
+
+Test Coverage
+
+- 🛡️ Approval execution
+- 🔁 Approval replay protection
+- 🚫 Blocking sensitive actions without approval
+- 🧠 Memory evidence integrity
+- 📊 Report memory traceability
+- 💾 Task persistence
+- ✅ Verification memory traceability
+- 🔎 Workflow memory retrieval
+
+---
+
+🎥 Demo Video
+
+«🚧 Demo Video: Coming Soon»
+
+The final demonstration will showcase:
+
+🎯 Real-world objective
+→ 🧠 Planning
+→ 🔎 Research
+→ ⚙️ Controlled execution
+→ 🛡️ Human approval
+→ ✅ Verification
+→ 🔄 Recovery
+→ 🧠 Memory
+→ 📊 Final readiness report
+
+---
+
+🏆 Hackathon
+
+<p align="center">
+  <strong>🤖 Agents for Humans Hackathon</strong>
+</p><p align="center">
+  <strong>Track: Everyday Agents</strong>
+</p><p align="center">
+  <a href="https://agentsforhumans.devpost.com/">
+    <img src="https://img.shields.io/badge/Official%20Hackathon-Devpost-003E54?style=for-the-badge&logo=devpost">
+  </a>
+</p>---
+
+💻 Repository
+
+<p align="center">
+  <a href="https://github.com/snehassneha4578-collab/LIFEOPS">
+    <img src="https://img.shields.io/badge/VIEW%20SOURCE%20CODE-GitHub-181717?style=for-the-badge&logo=github">
+  </a>
+</p><p align="center">
+  <strong>GitHub:</strong>
+  <a href="https://github.com/snehassneha4578-collab/LIFEOPS">
+    snehassneha4578-collab/LIFEOPS
+  </a>
+</p>---
+
+👩‍💻 Developer
+
+<p align="center"><strong>Sneha S</strong>
+
+<br>ECE Student • AI/ML • Embedded Systems • VLSI
+
+</p>---
+
+📜 License
+
+This project is licensed under the MIT License.
+
+---
+
+<p align="center"><h2 align="center">🚀 LIFEOPS</h2><p align="center">
+  <strong>Autonomous operations with safety, evidence and verification.</strong>
+</p><p align="center">
+  🎯 Plan &nbsp;•&nbsp;
+  🔎 Research &nbsp;•&nbsp;
+  ⚙️ Act &nbsp;•&nbsp;
+  🛡️ Approve &nbsp;•&nbsp;
+  ✅ Verify &nbsp;•&nbsp;
+  🔄 Recover &nbsp;•&nbsp;
+  🧠 Remember &nbsp;•&nbsp;
+  📊 Report
+</p></p>
