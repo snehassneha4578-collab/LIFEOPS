@@ -55,16 +55,28 @@ Return exact file paths and what each artifact contains.
             f"Current request:\n{request}"
         )
 
-        with ThreadPoolExecutor(max_workers=2) as executor:
-            plan_future = executor.submit(create_plan, plan_request)
-            research_future = executor.submit(research_task, research_request)
-            state.plan = plan_future.result()
-            state.research = research_future.result()
+        existing_evidence = list_evidence()
+        cached_research = [
+            item for item in existing_evidence
+            if isinstance(item, dict)
+            and item.get("url") == official_hackathon_url
+        ]
 
-        # FAST DEMO MODE:
-        # Planner already produces priority information, so avoid a
-        # redundant second LLM call. This keeps Planner, Research,
-        # Action, Verification, and Report in the workflow.
+        if cached_research:
+            state.research = (
+                "CACHED OFFICIAL RESEARCH\n"
+                f"Source: {official_hackathon_url}\n"
+                f"Persistent evidence records available: {len(cached_research)}\n"
+                "Existing stored evidence will be used for verification."
+            )
+            state.plan = create_plan(plan_request)
+        else:
+            with ThreadPoolExecutor(max_workers=2) as executor:
+                plan_future = executor.submit(create_plan, plan_request)
+                research_future = executor.submit(research_task, research_request)
+                state.plan = plan_future.result()
+                state.research = research_future.result()
+
         state.priorities = state.plan
 
         state.evidence = list_evidence()
