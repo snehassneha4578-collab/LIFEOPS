@@ -70,12 +70,16 @@ LIFEOPS verifies results using persistent task state, research evidence, audit r
 
 ## 🏗️ Architecture
 
+
 LIFEOPS Architecture
 
 ![LIFEOPS Architecture](docs/LIFEOPS_Architecture_Diagram.png)
+LIFEOPS Architecture
 
 
-![LIFEOPS Architecture](docs/LIFEOPS_Architecture_Diagram.png)
+
+
+
 
 ## 💻 Technology Stack
 
